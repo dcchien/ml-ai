@@ -1,5 +1,6 @@
-# Learn from others, explore new ideas and actually implement codes and have hands-on experience  
-# for Machine Learning & Artificial Intelligence.
+# Objective
+Learn from others, explore new ideas and implement codes to have hands-on experience  
+with Machine Learning & Artificial Intelligence.
 
-# Focus on Python3.7, ML Libraries, Tensorflow, Keras with examples, how-to and information...
-
+# Prerequisite
+Python3.7, ML Libraries, Tensorflow V2, Keras, Algorithms, Statistics Models, pip, notebook, virtual environment
