@@ -118,8 +118,11 @@ consumer_secret = ''
 access_token = ''
 access_token_secret = ''
 <<<<<<< HEAD
+<<<<<<< HEAD
 #keyword = ''
 =======
+=======
+>>>>>>> 8ecd5d8... update
 #keyword = 'harmony'
 >>>>>>> c0941a328fb8882a65efc8bd8e38445879662e9a
 
