@@ -113,11 +113,11 @@ class Connection_twitter():
 # tweeter analysis
 # get the following keys from twitter developer site
 #
-consumer_key = 'Q3dz8qZ923H8WJeQs7IFIlRLZ'
-consumer_secret = 'uTikaHpXSep7vAI0kKZo4UPgkmRFD9oxMUWUQW8OlS9l1RBmeC'
-access_token = '48903760-uAKbt5VUpmVtBXykfy1no1MY7XqlyPLXWxLFkgZ57'
-access_token_secret = 'WOHBRrh1wgSdwoEIySSuhuLxJ0XydAfblDzSuzGA6p7sM'
-#keyword = 'harmony'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
+#keyword = ''
 
 #
 # list of keywords
