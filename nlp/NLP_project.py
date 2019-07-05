@@ -117,7 +117,11 @@ consumer_key = ''
 consumer_secret = ''
 access_token = ''
 access_token_secret = ''
+<<<<<<< HEAD
 #keyword = ''
+=======
+#keyword = 'harmony'
+>>>>>>> c0941a328fb8882a65efc8bd8e38445879662e9a
 
 #
 # list of keywords
