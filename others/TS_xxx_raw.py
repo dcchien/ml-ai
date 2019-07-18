@@ -44,6 +44,13 @@ print(df.dtypes)
 print(df.info())
 print(df.describe())
 
+# graph
+sns.relplot(x='stats_name', y='taken_sec', data=df)
+plt.show()
+
+sns.distplot(df[taken_sec'], bins=10)
+plt.show()
+
 #groupby multiple cols
 df = df.groupby(['stats_name', 'entity_id'])
 
