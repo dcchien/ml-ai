@@ -48,7 +48,7 @@ print(df.describe())
 sns.relplot(x='stats_name', y='taken_sec', data=df)
 plt.show()
 
-sns.distplot(df[taken_sec'], bins=10)
+sns.distplot(df['taken_sec'], bins=10)
 plt.show()
 
 #groupby multiple cols
