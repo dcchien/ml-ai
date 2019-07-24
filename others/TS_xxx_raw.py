@@ -5,7 +5,7 @@ import numpy as np
 import seaborn as sns; sns.set()
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('./data/xxx_Raw_Data-0827-0831.csv', header = 0, parse_dates=True)
+df = pd.read_csv('./data/YWH_Raw_Data-0827-0831.csv', header = 0, parse_dates=True)
 # 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', None)
@@ -32,27 +32,36 @@ df.rename(
 )
 
 # split objects of data and time into two columns
-df['sdate'] = df['start_time'].str.split(' ').str[0]
-df['stime'] = df['start_time'].str.split(' ').str[1]
-df.drop('start_time', axis=1, inplace=True)
+# if we would like to separate date and timestamp
 
-# shuffle colns
-cols = ['sdate', 'stime', 'stats_name', 'entity_id', 'user', 'taken_sec']
-df = df[cols]
-print(df.head())
-# check missing data
-print("NaN Counts")
-print(df.isna().sum())
+def split_datetime():
+	df['sdate'] = df['start_time'].str.split(' ').str[0]
+	df['stime'] = df['start_time'].str.split(' ').str[1]
+	df.drop('start_time', axis=1, inplace=True)
+
+	# shuffle colns
+	cols = ['sdate', 'stime', 'stats_name', 'entity_id', 'user', 'taken_sec']
+	df = df[cols]
+
+def quickinfo():
+	print(df.head())
+	print(df.shape)
+	print(df.dtypes)
+	print(df.info())
+	print("==NaN Counts==")
+	print(df.isna().sum())
+
+quickinfo()
 
 df1 = df.groupby('user')['taken_sec'].count()
 print(df1.head())
+
+# convert stringdatetime to datetime64 and change cols name
+df['dtime'] = pd.to_datetime(df['start_time'])
+print(df.info())
+
 #write to a csv file
 df.to_csv('./data/TS_xxx_data2.csv', encoding='utf-8', index=False)
-
-print(df.shape)
-print(df.dtypes)
-print(df.info())
-#print(df.describe())
 
 # Graphs 
 sns.relplot(x='stats_name', y='taken_sec', hue='stats_name', data=df)
