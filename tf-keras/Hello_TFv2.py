@@ -8,7 +8,7 @@ from tensorflow import keras
 print("TF version:", tf.__version__)
 print("Keras version:",keras.__version__)
 
-# @tf.function decorator - function a like an op
+# @tf.function decorator
 @tf.function
 def add(a, b):
   return a + b
@@ -16,7 +16,10 @@ def add(a, b):
 print(add(tf.constant(20), tf.constant(80)))
 print(add(10,60))
 
-#need to add this line for TFv2 Beta
+print(add(tf.zeros([2, 2]), tf.zeros([2, 2])))
+print(add(tf.ones([2, 2]), tf.ones([2, 2])))
+
+#need to add this line for TFv2 Beta if you use compat.v1
 #disable eagle execution
 tf.compat.v1.disable_eager_execution()
 
